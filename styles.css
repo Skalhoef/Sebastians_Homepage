@@ -1,0 +1,460 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #ffffff;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #ffffff;
+    border-right: 2px solid #000;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Box around menu */
+.menu-box {
+    border: 2px solid #000;
+    padding: 15px;
+    height: calc(100% - 96px);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+}
+
+.menu-box li {
+    padding: 10px 5px;
+    cursor: pointer;
+    width: 100%;
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-box a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-box li:empty::before {
+    content: "\00a0";
+}
+
+/* Add lines BETWEEN items */
+.menu-box li:not(:last-child) {
+    border-bottom: 2px solid #000;
+}
+
+.support-row {
+    margin-top: auto;
+    border-top: 2px solid #000;
+}
+
+.logout-row {
+    cursor: pointer;
+}
+
+.logout-placeholder {
+    margin-top: auto;
+    border-top: 2px solid #000;
+    cursor: default;
+}
+
+.logout-row:hover {
+    background: #efefef;
+}
+
+/* Main */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+/* Header */
+.header {
+    position: relative;
+    border-bottom: 2px solid #000;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 48px;
+    letter-spacing: 5px;
+}
+
+/* Image in upper-right */
+.header-img {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    height: 60px;
+}
+
+/* Top title box (pre-login page) */
+.top-title-box {
+    width: 100%;
+    margin: 0;
+    padding: 24px 20px;
+    border: 2px solid #000;
+    background: #fff;
+    text-align: center;
+}
+
+.top-title-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.top-title-link:hover {
+    text-decoration: none;
+}
+
+.top-title-box h2 {
+    font-size: 38px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 18px;
+    line-height: 1.6;
+    font-family: system-ui, sans-serif;
+}
+
+.about-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    width: 240px;
+    max-width: 35vw;
+    height: auto;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* Pre-login middle column */
+.entry-column {
+    flex: 2;
+    padding: 30px 24px;
+    border-right: 2px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px;
+}
+
+.entry-column p {
+    font-size: 32px;
+    line-height: 1.25;
+}
+
+.entry-options,
+.login-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.registration-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.registration-panel h2 {
+    font-size: 36px;
+}
+
+.registration-panel p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.registration-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 20px;
+    max-width: 860px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.registration-form label,
+.checkbox-label {
+    font-size: 18px;
+}
+
+.registration-form input,
+.registration-form select,
+.registration-form textarea {
+    width: 100%;
+    font-size: 18px;
+    padding: 10px 12px;
+    border: 2px solid #000;
+    background: #fff;
+}
+
+.registration-form textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+}
+
+.radio-group label,
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-field {
+    padding-top: 4px;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.form-actions input,
+.form-actions button {
+    font-size: 18px;
+    padding: 10px 14px;
+    border: 2px solid #000;
+    background: #fff;
+    cursor: pointer;
+}
+
+.form-actions input:hover,
+.form-actions button:hover {
+    background: #efefef;
+}
+
+.entry-option {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+    max-width: 100%;
+    font-size: 22px;
+    line-height: 1.2;
+    text-align: left;
+    background: #fff;
+    border: 2px solid #000;
+    padding: 14px 18px;
+    cursor: pointer;
+    appearance: none;
+}
+
+.entry-option:hover {
+    background: #efefef;
+}
+
+.login-panel h2 {
+    font-size: 36px;
+}
+
+.login-panel label {
+    font-size: 22px;
+}
+
+.login-panel input {
+    width: 100%;
+    max-width: 500px;
+    font-size: 20px;
+    padding: 10px 12px;
+    border: 2px solid #000;
+    background: #fff;
+}
+
+.login-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.main-action,
+.secondary-action,
+.back-link {
+    font-size: 18px;
+    padding: 10px 14px;
+    border: 2px solid #000;
+    background: #fff;
+    cursor: pointer;
+}
+
+.main-action:hover,
+.secondary-action:hover,
+.back-link:hover {
+    background: #efefef;
+}
+
+.back-link {
+    width: fit-content;
+}
+
+.hidden {
+    display: none;
+}
+
+.registration-page .entry-column {
+    justify-content: flex-start;
+}
+
+/* Pre-login right column (kept empty on purpose) */
+.right-placeholder {
+    flex: 1;
+}
+
+/* Daily Goal */
+.daily {
+    flex: 2;
+    padding: 20px;
+    border-right: 2px solid #000;
+}
+
+.daily textarea {
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #000;
+}
+
+/* Tracking Section */
+.tracking {
+    flex: 1;
+    padding: 20px;
+}
+
+.tracking h3 {
+    margin-bottom: 10px;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 30px);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Boxes */
+.box {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+.box:hover {
+    background: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .top-title-box h2 {
+        font-size: 28px;
+    }
+
+    .entry-column p {
+        font-size: 24px;
+    }
+
+    .entry-option {
+        font-size: 20px;
+    }
+
+    .login-panel h2 {
+        font-size: 30px;
+    }
+
+    .login-panel label {
+        font-size: 20px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .about-layout {
+        flex-direction: column;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .daily {
+        border-right: none;
+        border-bottom: 2px solid #000;
+    }
+
+    .registration-form {
+        grid-template-columns: 1fr;
+    }
+}
