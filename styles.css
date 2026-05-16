@@ -5,6 +5,12 @@
     font-family: Arial, sans-serif;
 }
 
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
 body {
     background: #ffffff;
 }
@@ -113,11 +119,11 @@ body {
     letter-spacing: 5px;
 }
 
-/* Image in upper-right */
+/* Image in upper-left */
 .header-img {
     position: absolute;
     top: 10px;
-    right: 20px;
+    left: 20px;
     height: 80px;
     max-height: 12vh;
 }
