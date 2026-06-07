@@ -5,6 +5,15 @@
     font-family: Arial, sans-serif;
 }
 
+.legacy-codes {
+    list-style-type: disc;
+    padding-left: 1.5em; /* ensures indentation */
+}
+
+.legacy-codes li {
+    display: list-item;
+}
+
 ul {
     list-style: none;
     padding-left: 0;
