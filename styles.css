@@ -17,6 +17,11 @@
    Styles related to all html-pages
 -------------------------------- */
 
+p {
+    margin-bottom: 1em;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -78,7 +83,6 @@ body {
 }
 
 
-/* Main */
 .main {
     flex: 1;
     display: flex;
@@ -97,7 +101,6 @@ body {
 }
 
 
-/* Top title box (pre-login page) */
 .top-title-box {
     width: 100%;
     margin: 0;
@@ -151,6 +154,7 @@ body {
 }
 
 
+
 /* -------------------------------------------- 
     Special Styles related to the Research-page
 --------------------------------------------- */
@@ -159,9 +163,3 @@ body {
     list-style-type: disc;
     padding-left: 1.5em; /* ensures indentation */
 }
-
-
-p {
-    margin-bottom: 1em;
-}
-
