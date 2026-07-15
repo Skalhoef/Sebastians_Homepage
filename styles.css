@@ -17,11 +17,6 @@
    Styles related to all html-pages
 -------------------------------- */
 
-p {
-    margin-bottom: 1em;
-}
-
-
 * {
     margin: 0;
     padding: 0;
@@ -44,10 +39,22 @@ body {
 .sidebar {
     width: 220px;
     background: #ffffff;
-    border-right: 2px solid #000;
     padding: 20px;
     display: flex;
     flex-direction: column;
+    position: relative; /* Provides the positioning reference for the divider below. */
+}
+
+
+/* Draws a shorter divider instead of a line spanning the entire sidebar. */
+.sidebar::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 2px;
+    height: calc(100% - 135px);
+    background: #000;
 }
 
 
@@ -82,11 +89,24 @@ body {
 }
 
 
+.menu-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+}
+
+
 .main {
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
 }
 
 
@@ -125,13 +145,14 @@ body {
 
 
 .content {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 18px;
-    line-height: 1.6;
+    display: flex; /* Lets the content area participate in the page’s flexible layout. */
+    flex: 1;       /* Expands it across all available space beside the sidebar. */
+    flex-direction: column; /* Keeps headings, paragraphs, lists, and images stacked vertically. */
+    padding: 24px 20px; /* Adds the same top/bottom and side spacing */
+    line-height: 1.4;
     font-family: system-ui, sans-serif;
+    gap: 24px; /* Spaces headings, paragraphs, lists, and other content consistently. */
 }
-
 
 
 /* ----------------------------------------- 
@@ -142,6 +163,17 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 32px;
+    flex: 1; /* Makes the text-and-image layout occupy the full width of .content. */
+}
+
+
+.about-text {
+    flex: 1;
+    min-width: 0;
+    display: flex; /* Makes the paragraphs vertically managed flex items. */
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px; /* Matches the spacing used between AI‑KaSa content entries. */
 }
 
 
@@ -161,4 +193,19 @@ body {
 .legacy-codes {
     list-style-type: disc;
     padding-left: 1.5em; /* ensures indentation */
+}
+
+
+@media (max-width: 800px) {
+    .top-title-box h2 {
+        font-size: 28px; /* Reduces the large header title on narrow screens. */
+    }
+    .about-layout {
+        flex-direction: column; /* Places the portrait below the text when horizontal space is limited. */
+    }
+}
+
+
+.content > ul {
+    padding-left: 1.5em; /* Moves the bullets and list text away from the content edge. */
 }
