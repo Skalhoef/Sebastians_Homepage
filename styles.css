@@ -77,6 +77,11 @@ body {
 }
 
 
+.menu-box li:hover {
+    background: #efefef;
+}
+
+
 .menu-box a {
     text-decoration: none;
     color: inherit;
