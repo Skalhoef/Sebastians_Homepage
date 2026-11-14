@@ -32,7 +32,7 @@ body {
 
 .container {
     display: flex;
-    height: 100vh;
+    min-height: 100vh; /* Lets the page grow with long content so the sidebar can stick while scrolling. */
 }
 
 
@@ -42,7 +42,10 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    position: relative; /* Provides the positioning reference for the divider below. */
+    position: sticky;   /* Keeps the sidebar in place while scrolling; also anchors the divider below. */
+    top: 0;
+    height: 100vh;
+    align-self: flex-start; /* Prevents stretching to the full container height, which would disable sticking. */
 }
 
 
